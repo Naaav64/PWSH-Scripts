@@ -6,6 +6,8 @@ $pass = Read-Host -prompt "Enter User Password"  -AsSecureString
 $desc = Read-Host -prompt "Enter User Title and Department"
 $role = #'user' or 'admininistrator'
 
+import-module microsoft.powershell.localaccounts -UseWindowsPowerShell
+
 $user = New-LocalUser -name $name -Password $pass -FullName $fullname -Description $desc
 
 Add-LocalGroupMember -group $role -Member $user
