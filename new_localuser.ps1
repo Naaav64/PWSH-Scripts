@@ -8,6 +8,7 @@ $desc = Read-Host -prompt "Enter User Title and Department"
 #if you want to modify user's local group, uncomment
 #$role = 'Administrators' 
 
+#To solve error if using Powershell 7.x and up
 Import-Module microsoft.powershell.localaccounts -UseWindowsPowerShell 
 
 New-LocalUser -name $name -Password $pass -FullName $fullname -Description $desc
