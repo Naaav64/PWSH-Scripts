@@ -2,4 +2,4 @@
 Import-Module activedirectory
 
 #List all AD users
-Get-aduser -Filter *
+Get-aduser -Filter * | Select-Object Name, userpriciplename, sid
