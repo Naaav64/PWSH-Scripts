@@ -20,6 +20,7 @@ Foreach ($user in $users) {
         -UserPrincipalName ($user.'First Name' + '.' + $user.'Last Name') `
         -AccountPassword $creds `
         -Path $user.'Organizational Unit' `
+        -Description $user.Description `
         -ChangePasswordAtLogon $true `
-        -Enabled $true # Should leave disabled for security purposes, can enable as users onboard.      
+        -Enabled ([System.Convert]::ToBoolean(($user.Enabled))    
 }
