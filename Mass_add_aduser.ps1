@@ -22,5 +22,5 @@ Foreach ($user in $users) {
         -Path $user.'Organizational Unit' `
         -Description $user.Description `
         -ChangePasswordAtLogon $true `
-        -Enabled ([System.Convert]::ToBoolean(($user.Enabled))    
+        -Enabled ([System.Convert]::ToBoolean($user.Enabled))    
 }
